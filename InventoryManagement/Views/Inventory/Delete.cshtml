@@ -1,0 +1,60 @@
+﻿@model Inventory.DataAccess.Entities.InventoriesManagement
+@{
+    ViewBag.Title = "Delete";
+}
+<h2>Are you sure you want to delete this?</h2>
+<div class="marketing">
+    <div class="row">
+    <div class="col-md-12">
+        <p>
+        @Html.HiddenFor(x => x.InventoryID)
+            </p>
+        <p>
+            <b>@Html.DisplayNameFor(model => model.Name):</b>
+
+            @Html.DisplayFor(model => model.Name)
+        </p>
+
+        <p>
+            <b>@Html.DisplayNameFor(model => model.Type):</b>
+        
+            @Html.DisplayFor(model => model.Type)
+        </p>
+        <p>
+            <b>@Html.DisplayNameFor(model => model.Quantity): </b>
+
+            @Html.DisplayFor(model => model.Quantity)
+        </p>
+        <p>
+            <b>@Html.DisplayNameFor(model => model.Size): </b>
+
+            @Html.DisplayFor(model => model.Size)
+        </p>
+        <p>
+            <b>Single Price: </b>
+
+            @Html.DisplayFor(model => model.SinglePrice)
+        </p>
+        <p>
+            <img src="data:image/png;base64,@Html.CreateBase64Image(Model.Picture)" width="170" class="media-photo">
+            </p>
+        <div >
+            @using (Html.BeginForm("Delete", "Inventory", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <input type="submit" style="margin-top:10px" value="Delete" class="btn btn-danger" />
+
+            }
+            <a class="btn btn-info btn-sm" style="margin-top:30px" href="@Url.Action("List", "Inventory")">Back To Inventory List</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+        
+
+

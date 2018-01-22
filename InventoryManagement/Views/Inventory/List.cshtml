@@ -1,0 +1,69 @@
+﻿@model InventoryManagement.ViewModels.ListModel<Inventory.DataAccess.Entities.InventoriesManagement>
+
+@{
+    ViewBag.Title = "Inventory Catalog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .highlight:hover {
+        background-color: #00F5FF;
+        cursor: pointer;
+    }
+
+</style>
+<h1>Inventory List</h1>
+<a class="btn btn-success"style="margin-bottom:20px" onclick="location.href = '@(Url.Action("Create", "Inventory"))'"><i class="fa fa-plus" aria-hidden="true"></i> Add New</a>
+<div class="row">
+    <section class="content">
+
+        <div class="col-md-12">
+            @using (Html.BeginForm("List", "Inventory", FormMethod.Get))
+            {
+                <p>
+                    Search by <b>Name</b> Or <b>Type</b>: @Html.TextBox("SearchString")
+                    <input type="submit" class="btn btn-primary btn-sm" value="Search" />
+                </p>
+            }
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-container">
+                        <table class="table table-filter" id="Inventory" >
+                            <thead>
+                                <tr>
+                                    <th>@Html.ActionLink("Name", "List", new { sortOrder = ViewBag.NameSortParm})</th>
+                                    <th>@Html.ActionLink("Type", "List", new { sortOrder = ViewBag.TypeSortParm})</th>
+                                    <th>@Html.ActionLink("Quantity", "List", new { sortOrder = ViewBag.QuantitySortParm })</th>
+                                    <th>@Html.ActionLink("Single Price", "List", new { sortOrder = ViewBag.SinglePriceSortParm})</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Inventory.DataAccess.Entities.InventoriesManagement item in Model.Items)
+                                {
+
+                                    <tr class="highlight" onclick="location.href = '@(Url.Action("Details", "Inventory", new { id = item.InventoryID }))'">
+                                        <td>
+                                            @item.Name
+                                        </td>
+                                        <td>
+                                            @item.Type
+                                        </td>
+                                        <td>
+                                            @item.Quantity
+                                        </td>
+                                        <td>
+                                            @item.SinglePrice 
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+

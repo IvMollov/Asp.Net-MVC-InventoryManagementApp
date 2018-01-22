@@ -1,0 +1,74 @@
+﻿@model Inventory.DataAccess.Entities.InventoriesManagement
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Add New Item</h2>
+@using (Html.BeginForm("Create", "Inventory", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+   
+        <div class="form-group">
+            @Html.HiddenFor(x => x.InventoryID)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Name, new { @class = "control-label" })
+            <div>
+                @Html.TextBoxFor(x => x.Name, new { htmlattribites = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Type, new { @class = "control-label" })
+            <div>
+                @Html.TextBoxFor(x => x.Type, new { htmlattribites = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Type, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Quantity, new { @class = "control-label" })
+            <div>
+                @Html.TextBoxFor(x => x.Quantity, new { htmlattribites = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Quantity, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Size, new { @class = "control-label" })
+            <div>
+                @Html.TextBoxFor(x => x.Size, new { htmlattribites = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.Size, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="form-group">
+            <b>Single Price</b>
+            <div>
+                @Html.TextBoxFor(x => x.SinglePrice, new { htmlattribites = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(x => x.SinglePrice, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Description, new { @class = "control-label" })
+            <div>
+                @Html.TextAreaFor(x => x.Description, new { rows = "10", cols = "150" })
+            </div>
+
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(x => x.Picture, new { @class = "control-label" })
+            <div>
+                <input type="file" id="image" name="image" />
+            </div>
+        </div>
+        
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Save Item" />
+            </div>
+        
+}
+
+<div style="margin-top:100px">
+    <a class="btn btn-info btn-sm" href="@Url.Action("List", "Inventory")">Back To Inventory List</a>
+</div>
+
+    
+
+

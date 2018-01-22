@@ -1,0 +1,44 @@
+﻿@model Inventory.DataAccess.Entities.InventoriesManagement
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="marketing">
+    <div class="row">
+        <div class="col-md-2">
+            <img src="data:image/png;base64,@Html.CreateBase64Image(Model.Picture)" width="170" class="media-photo">
+        </div>
+        <div class="col-md-3">
+            <p>
+                <b>Name:</b> @Model.Name
+            </p>
+            <p>
+                <b>Type:</b> @Model.Type
+            </p>
+            <p>
+                <b>Quantity:</b> @Model.Quantity
+            </p>
+            <p>
+                <b>Size:</b> @Model.Size
+            </p>
+            <p>
+                <b>Single price:</b> @Model.SinglePrice
+            </p>
+            <p>
+                <b>Description:</b> @Html.Raw(Model.Description)
+            </p>
+        </div>
+        <div class="col-md-7">
+            <a class="btn btn-success" href="@Url.Action("Update", "Inventory", new { id = Model.InventoryID })">
+                Edit
+            </a>
+            <a class="btn btn-danger" href="@Url.Action("Delete", "Inventory", new { id = Model.InventoryID })">
+                Delete
+            </a>
+            
+        </div>
+    </div>
+    <a class="btn btn-info btn-sm" href="@Url.Action("List", "Inventory")">Back To Inventory List</a>
+</div>
+

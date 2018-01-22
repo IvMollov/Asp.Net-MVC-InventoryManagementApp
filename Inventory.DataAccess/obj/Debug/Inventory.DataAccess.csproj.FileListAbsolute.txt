@@ -1,0 +1,14 @@
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\Inventory.DataAccess.dll.config
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\Inventory.DataAccess.dll
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\Inventory.DataAccess.pdb
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\EntityFramework.dll
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\PagedList.dll
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\PagedList.Mvc.dll
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\EntityFramework.xml
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\PagedList.xml
+D:\Projects\Inventory\Inventory.DataAccess\bin\Debug\PagedList.Mvc.xml
+D:\Projects\Inventory\Inventory.DataAccess\obj\Debug\Inventory.DataAccess.csprojResolveAssemblyReference.cache
+D:\Projects\Inventory\Inventory.DataAccess\obj\Debug\Inventory.DataAccess.dll
+D:\Projects\Inventory\Inventory.DataAccess\obj\Debug\Inventory.DataAccess.pdb
